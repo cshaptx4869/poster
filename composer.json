@@ -1,9 +1,11 @@
 {
   "name": "cshaptx4869/poster",
-  "description": "poster generator",
+  "description": "poster generator. 基于GD库的海报生成器",
   "type": "library",
   "keywords": [
-    "poster"
+    "poster",
+    "gd",
+    "海报"
   ],
   "license": [
     "Apache-2.0"
