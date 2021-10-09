@@ -38,11 +38,16 @@ class Poster
         if (count($size) === 2) {
             $resource = imagecreatetruecolor($size[0], $size[1]);
         } else {
-            if (!file_exists($image)) {
-                throw new \Exception('图片' . $image . '不存在');
+            if (preg_match('/^https?:\/\//i', $image) || @is_file($image)) {
+                $image = file_get_contents($image);
             }
-            $resource = imagecreatefromstring(file_get_contents($image));
+            $resource = imagecreatefromstring($image);
         }
+
+        if ($resource === false) {
+            throw new \Exception('从' . $image . '新建图像失败');
+        }
+
         $this->resources[] = $resource;
 
         return $resource;
@@ -77,7 +82,7 @@ class Poster
 
     /**
      * 设置图像
-     * @param string $image 本地图片
+     * @param string $image 本地、网络、二进制图片
      * @param int $x 起始x坐标
      * @param int $y 起始y坐标
      * @param int $width 所占宽度
