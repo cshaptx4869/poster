@@ -1,0 +1,36 @@
+{
+  "name": "cshaptx4869/poster",
+  "description": "poster generator",
+  "type": "library",
+  "keywords": [
+    "poster"
+  ],
+  "license": [
+    "Apache-2.0"
+  ],
+  "authors": [
+    {
+      "name": "cshaptx4869",
+      "email": "994774638@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-gd": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fairy\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  ]
+}
