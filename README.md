@@ -100,7 +100,7 @@ public function font($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = n
  * @return $this
  * @throws \Exception
  */
-public function line($x1, $y1, $x2, $y2, $rgb, $weight = 1)
+public function line($x1, $y1, $x2, $y2, $rgb = '255,255,255', $weight = 1)
 ```
 
 - output()
@@ -108,8 +108,12 @@ public function line($x1, $y1, $x2, $y2, $rgb, $weight = 1)
 ```php
 /**
  * 输出
- * @param null $filename 保存图片名称,不写则浏览器输出
+ * @param null $filename 保存图片名称 不写则浏览器输出
  */
 public function output($filename = null)
 ```
+
+> 其他
+
+如果要生成二维码，推荐使用 [endroid/qr-code](https://packagist.org/packages/endroid/qr-code) 包。生成二维码后再调用本包的 image() 方法即可生成带有二维码的海报。
 

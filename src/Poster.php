@@ -14,15 +14,12 @@ class Poster
 
     protected $colors = [];
 
-    protected $fontFamily;
-
     /**
      * @param string $backgroundImage 背景图片
      * @throws \Exception
      */
     public function __construct($backgroundImage)
     {
-        $this->fontFamily = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'SourceHanSansCN-Normal.otf';
         $this->background = $this->resource($backgroundImage);
     }
 
@@ -113,7 +110,10 @@ class Poster
      */
     public function font($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = null)
     {
-        imagettftext($this->background, $size, 0, $x, $y, $this->color($rgb), $fontFamily ?: $this->fontFamily, $text);
+        if (empty($fontFamily) || !file_exists($fontFamily)) {
+            $fontFamily = $this->fontFamily();
+        }
+        imagettftext($this->background, $size, 0, $x, $y, $this->color($rgb), $fontFamily, $text);
 
         return $this;
     }
@@ -129,7 +129,7 @@ class Poster
      * @return $this
      * @throws \Exception
      */
-    public function line($x1, $y1, $x2, $y2, $rgb, $weight = 1)
+    public function line($x1, $y1, $x2, $y2, $rgb = '255,255,255', $weight = 1)
     {
         imagesetthickness($this->background, $weight);
         imageline($this->background, $x1, $y1, $x2, $y2, $this->color($rgb));
@@ -156,6 +156,15 @@ class Poster
         $this->colors[$rgb] = $color;
 
         return $color;
+    }
+
+    /**
+     * 字体
+     * @return string
+     */
+    protected function fontFamily()
+    {
+        return dirname(__FILE__) . DIRECTORY_SEPARATOR . 'SourceHanSansCN-Normal.otf';
     }
 
     /**
