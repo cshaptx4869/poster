@@ -1,6 +1,6 @@
 {
   "name": "cshaptx4869/poster",
-  "description": "poster generator. 基于GD库的海报生成器",
+  "description": "poster generator. 基于GD库的PHP海报生成器",
   "type": "library",
   "keywords": [
     "poster",
@@ -24,15 +24,5 @@
     "psr-4": {
       "Fairy\\": "src"
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
-    },
-    {
-      "type": "composer",
-      "url": "https://packagist.phpcomposer.com"
-    }
-  ]
+  }
 }
