@@ -26,11 +26,11 @@ try {
     $poster->image('./images/avatar.jpg', 94, 52, 82, 82, true)
         ->image('./images/service.png', 40, 310, 665, 566)
         ->image('./images/mini.jpg', 518, 1070, 180, 180)
-        ->font('白開水', 26, 220, 86, '150, 151, 150')
-        ->font('我们感情深，帮忙助力行不行', 35, 30, 210, '255, 255, 255')
-        ->font('单次4小时，专业保洁师为您解决全屋精细保洁', 24, 30, 270, '255, 255, 255')
-        ->font('&#165; 0.00', 40, 50, 946, '255, 0, 0')
-        ->font('原价 &#165;199', 20, 50, 990, '150, 151, 150')
+        ->text('白開水', 26, 220, 86, '150, 151, 150')
+        ->text('我们感情深，帮忙助力行不行', 35, 30, 210, '255, 255, 255')
+        ->text('单次4小时，专业保洁师为您解决全屋精细保洁', 24, 30, 270, '255, 255, 255')
+        ->text('&#165; 0.00', 40, 50, 946, '255, 0, 0')
+        ->text('原价 &#165;199', 20, 50, 990, '150, 151, 150')
         ->line(44, 980, 170, 980, '150, 151, 150', 2)
         ->output();
     exit();
@@ -69,7 +69,7 @@ public function __construct($backgroundImage)
 public function image($image, $x, $y, $width, $height, $circle = false)
 ```
 
-- font()
+- text()
 
 ```php
 /**
@@ -83,7 +83,7 @@ public function image($image, $x, $y, $width, $height, $circle = false)
  * @return $this
  * @throws \Exception
  */
-public function font($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = null)
+public function text($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = null)
 ```
 
 - line()

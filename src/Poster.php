@@ -108,7 +108,7 @@ class Poster
      * @return $this
      * @throws \Exception
      */
-    public function font($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = null)
+    public function text($text, $size, $x, $y, $rgb = '255,255,255', $fontFamily = null)
     {
         if (empty($fontFamily) || !file_exists($fontFamily)) {
             $fontFamily = $this->fontFamily();
