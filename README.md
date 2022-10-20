@@ -39,6 +39,8 @@ try {
 }
 ```
 
+![](https://foruda.gitee.com/images/1666232067947634001/b0eff4d7_5507348.png)
+
 > 方法说明
 
 - new Poster()
